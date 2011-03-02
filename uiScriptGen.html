@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<head>
+	<title>Uranium Interactive - Custom Script Generator</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+	<div id="scriptGenerator">
+		<h1>Frank's jQuery Sandbox</h1>
+		<h2>Uranium Interactive</h2>
+		<h3>Custom Script Generator <em>v1.0</em></h3>
+		
+		<form id="downloadScript" name="downloadScript" action="buildCustomPackage.php" method="post">
+			<div id="downloadScript-components">
+				<div class="component-group clearfix alt">
+					<div class="component-group-desc">
+						<h4>Uranium Interactive Custom Script</h4>
+						<div id="selectLinks">
+							<a href="/" class="selectAll">Select all components</a>
+						</div>
+						<p>For us, by us. This section regroup scripts found in the Public Template, developed specifically for some projects or based on your personnal sandbox.</p>
+					</div>
+					
+					<fieldset class="component-group-list">
+						<div class="lnModule">
+							<input id="ui-validation" type="checkbox" name="plugins[]" value="Plugins/ui-validation.js" />
+							<label class="clearfix" for="ui-validation">
+								<span class="component-title">Validation</span>
+								<span class="component-version">v1.0</span>
+								<span class="component-size">0.0</span>
+								<span class="component-desc">Custom validation used in contact form. Multilingual and bypass VS.NET postback requests.</span>
+							</label>
+						</div>
+					</fieldset>
+				</div>
+				
+				<div class="component-group clearfix">
+					<div class="component-group-desc">
+						<h4>jQuery User Interface</h4>
+						<p>jQuery UI provides abstractions for low-level interaction and animation, advanced effects and high-level, themeable widgets, built on top of the jQuery JavaScript Library, that you can use to build highly interactive web applications.</p>
+					</div>
+					
+					<fieldset class="component-group-list">
+						<div class="lnModule">
+							<input id="jqueryui-accordion" type="checkbox" name="plugins[]" value="Plugins/jqueryui-accordion.js" />
+							<label class="clearfix" for="jqueryui-accordion">
+								<span class="component-title"><a href="http://jqueryui.com/demos/accordion/" target="_blank">Accordion</a></span>
+								<span class="component-version">v1.8.4</span>
+								<span class="component-size">16.0</span>
+								<span class="component-desc">Click headers to expand/collapse content that is broken into logical sections, much like tabs.</span>
+							</label>
+						</div>
+					</fieldset>
+				</div>
+				
+				<div class="component-group clearfix alt">
+					<div class="component-group-desc">
+						<h4>jQuery Tools</h4>
+						<p>The main design goals of this tool are to provide visual customization, ease of use and programmability. The first version of the library was released on January 3, 2008. Since then, this tool has come a long way and it is now a stable and mature product.</p>
+					</div>
+					
+					<fieldset class="component-group-list">
+						<div class="lnModule">
+							<input id="tools-scrollable" type="checkbox" name="plugins[]" value="Plugins/tools-scrollable.js" />
+							<label class="clearfix" for="tools-scrollable">
+								<span class="component-title"><a href="http://flowplayer.org/tools/demos/scrollable/index.html" target="_blank">Scrollable</a></span>
+								<span class="component-version">v1.2.2</span>
+								<span class="component-size">7.0</span>
+								<span class="component-desc">Add custom scrolls to your site</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="tools-dateinput" type="checkbox" name="plugins[]" value="Plugins/tools-dateinput.js" />
+							<label class="clearfix" for="tools-dateinput">
+								<span class="component-title"><a href="http://flowplayer.org/tools/dateinput/index.html" target="_blank">Dateinput</a></span>
+								<span class="component-version">v1.2.2</span>
+								<span class="component-size">16.5</span>
+								<span class="component-desc">This tool brings HTML5 date input to all browsers in such a way that you can make it look and behave like you want.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="tools-tabs" type="checkbox" name="plugins[]" value="Plugins/tools-tabs.js" />
+							<label class="clearfix" for="tools-tabs">
+								<span class="component-title"><a href="http://flowplayer.org/tools/tabs/index.html" target="_blank">Tabs</a></span>
+								<span class="component-version">v1.2.2</span>
+								<span class="component-size">6.0</span>
+								<span class="component-desc">Tabs are generally used to break content into multiple sections that can be swapped to save space, much like an accordion.</span>
+							</label>
+						</div>
+					</fieldset>
+				</div>
+				
+				<div class="component-group clearfix">
+					<div class="component-group-desc">
+						<h4>jQuery Plugins</h4>
+						<p>There are thousands of jQuery plug-ins available on the web that cover a wide range of functionality such as Ajax helpers, webservices, datagrids, dynamic lists, XML and XSLT tools, drag and drop, events, cookie handling, modal windows. Here are some you might find useful in your next projects.</p>
+					</div>
+					
+					<fieldset class="component-group-list">
+						<div class="lnModule">
+							<input id="jquery-cookie" type="checkbox" name="plugins[]" value="Plugins/jquery-cookie.js" />
+							<label class="clearfix" for="jquery-cookie">
+								<span class="component-title"><a href="http://plugins.jquery.com/project/cookie" target="_blank">Cookie</a></span>
+								<span class="component-version">v1.0</span>
+								<span class="component-size">6.0</span>
+								<span class="component-desc">A simple, lightweight utility plugin for reading, writing and deleting cookies.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-easyslider" type="checkbox" name="plugins[]" value="Plugins/jquery-easyslider.js" />
+							<label class="clearfix" for="jquery-easyslider">
+								<span class="component-title"><a href="http://cssglobe.com/post/5780/easy-slider-17-numeric-navigation-jquery-slider" target="_blank">Easy Slider</a></span>
+								<span class="component-version">v1.7</span>
+								<span class="component-size">6.0</span>
+								<span class="component-desc">Image/content slider with the option to choose between classic previous/next navigation or to use a numeric "pagination" style navigation.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-nivo" type="checkbox" name="plugins[]" value="Plugins/jquery-nivo.js" />
+							<label class="clearfix" for="jquery-nivo">
+								<span class="component-title"><a href="http://nivo.dev7studios.com/" target="_blank">Nivo Slider</a></span>
+								<span class="component-version">v2.1</span>
+								<span class="component-size">15.0</span>
+								<span class="component-desc">"The most awesome jQuery Image Slider"</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-cycle" type="checkbox" name="plugins[]" value="Plugins/jquery-cycle.js" />
+							<label class="clearfix" for="jquery-cycle">
+								<span class="component-title"><a href="http://jquery.malsup.com/cycle/" target="_blank">Cycle</a></span>
+								<span class="component-version">v2.88</span>
+								<span class="component-size">32.0</span>
+								<span class="component-desc">The jQuery Cycle Plugin is a slideshow plugin that supports many different types of transition effects. It supports pause-on-hover, auto-stop, auto-fit, before/after callbacks, click triggers and much more.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-tinycarousel" type="checkbox" name="plugins[]" value="Plugins/jquery-tinycarousel.js" />
+							<label class="clearfix" for="jquery-tinycarousel">
+								<span class="component-title"><a href="http://baijs.nl/tinycarousel/" target="_blank">Tiny carousel</a></span>
+								<span class="component-version">v1.77</span>
+								<span class="component-size">4.0</span>
+								<span class="component-desc">Tiny Carousel is a lightweight carousel for sliding html based content.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-qtip" type="checkbox" name="plugins[]" value="Plugins/jquery-qtip.js" />
+							<label class="clearfix" for="jquery-qtip">
+								<span class="component-title"><a href="http://craigsworks.com/projects/qtip/" target="_blank">qTip</a></span>
+								<span class="component-version">v1.0.0-rc3</span>
+								<span class="component-size">84.0</span>
+								<span class="component-desc">qTip is a tooltip plugin for the jQuery framework. It's cross-browser, customizable and packed full of features!</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-colortip" type="checkbox" name="plugins[]" value="Plugins/jquery-colortip.js" />
+							<label class="clearfix" for="jquery-colortip">
+								<span class="component-title"><a href="http://tutorialzine.com/2010/07/colortips-jquery-tooltip-plugin/" target="_blank">Colortip</a></span>
+								<span class="component-version">v1.0</span>
+								<span class="component-size">4.0</span>
+								<span class="component-desc">Convert the title attributes of elements withing your page, into a series of colorful tooltips.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-shadowbox" type="checkbox" name="plugins[]" value="Plugins/jquery-shadowbox.js" />
+							<label class="clearfix" for="jquery-shadowbox">
+								<span class="component-title"><a href="http://www.shadowbox-js.com/index.html" target="_blank">Shadowbox</a></span>
+								<span class="component-version">v3.0.3</span>
+								<span class="component-size">62.0</span>
+								<span class="component-desc">Shadowbox is a web-based media viewer application that supports all of the web's most popular media publishing formats.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-colorbox" type="checkbox" name="plugins[]" value="Plugins/jquery-colorbox.js" />
+							<label class="clearfix" for="jquery-colorbox">
+								<span class="component-title"><a href="http://colorpowered.com/colorbox/" target="_blank">ColorBox</a></span>
+								<span class="component-version">v1.3.9</span>
+								<span class="component-size">24.0</span>
+								<span class="component-desc">A light-weight, customizable lightbox plugin for jQuery. Supports photos, grouping, slideshow, ajax, inline, and iframed content. Appearance is controlled through CSS so users can restyle the box.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-popeye" type="checkbox" name="plugins[]" value="Plugins/jquery-popeye.js" />
+							<label class="clearfix" for="jquery-popeye">
+								<span class="component-title"><a href="http://plugins.jquery.com/project/popeye" target="_blank">Popeye</a></span>
+								<span class="component-version">v2.0.4</span>
+								<span class="component-size">30.0</span>
+								<span class="component-desc">Popeye is an inline Lightbox Alternative that generates an inline image gallery from an unordered list of images. The gallery features clever inline image enlargement, i.e. the enlarged image stretches out over the site content without adding a visual overlay of the whole site.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-lavalamp" type="checkbox" name="plugins[]" value="Plugins/jquery-lavalamp.js" />
+							<label class="clearfix" for="jquery-lavalamp">
+								<span class="component-title"><a href="http://nixboxdesigns.com/projects/jquery-lavalamp/" target="_blank">LavaLamp</a></span>
+								<span class="component-version">v1.3.4 beta2</span>
+								<span class="component-size">15.0</span>
+								<span class="component-desc">An animated menu plugin for jQuery using the sliding-doors CSS effect.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-scrollto" type="checkbox" name="plugins[]" value="Plugins/jquery-scrollto.js" />
+							<label class="clearfix" for="jquery-scrollto">
+								<span class="component-title"><a href="http://plugins.jquery.com/project/ScrollTo" target="_blank">SCROLLTO</a></span>
+								<span class="component-version">v1.4.2</span>
+								<span class="component-size">8.0</span>
+								<span class="component-desc">With this plugin, you will easily scroll overflowed elements, and the screen itself. It gives you access to many different options to customize and various ways to specify where to scroll.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-innerfade" type="checkbox" name="plugins[]" value="Plugins/jquery-innerfade.js" />
+							<label class="clearfix" for="jquery-innerfade">
+								<span class="component-title"><a href="http://medienfreunde.com/lab/innerfade/" target="_blank">InnerFade</a></span>
+								<span class="component-version">v1.0</span>
+								<span class="component-size">5.00</span>
+								<span class="component-desc">InnerFade is a small plugin designed to fade you any element inside a container in and out. These elements could be anything you want, e.g. images, list-items, divs.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-blend" type="checkbox" name="plugins[]" value="Plugins/jquery-blend.js" />
+							<label class="clearfix" for="jquery-blend">
+								<span class="component-title"><a href="http://colorpowered.com/blend/" target="_blank">Blend</a></span>
+								<span class="component-version">v2.1</span>
+								<span class="component-size">3.00</span>
+								<span class="component-desc">A jQuery based animation/effect, progressive enhancement plugin for CSS backgrounds.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-tubeplayer" type="checkbox" name="plugins[]" value="Plugins/jquery-tubeplayer.js" />
+							<label class="clearfix" for="jquery-tubeplayer">
+								<span class="component-title"><a href="http://www.tikku.com/jquery-youtube-tubeplayer-plugin" target="_blank">TubePlayer</a></span>
+								<span class="component-version">v0.9.3</span>
+								<span class="component-size">8.0</span>
+								<span class="component-desc">Basically this jQuery plugin implements the YouTube Player API pretty much to spec.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-swfobject" type="checkbox" name="plugins[]" value="Plugins/jquery-swfobjectr.js" />
+							<label class="clearfix" for="jquery-swfobject">
+								<span class="component-title"><a href="http://jquery.thewikies.com/swfobject/" target="_blank">SWFObject </a></span>
+								<span class="component-version">v1.1.1</span>
+								<span class="component-size">6.0</span>
+								<span class="component-desc">The jQuery SWFObject plugin is an addon for jQuery that lets you easily embed flash movies on a page.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-adgallery" type="checkbox" name="plugins[]" value="Plugins/jquery-adgallery.js" />
+							<label class="clearfix" for="jquery-adgallery">
+								<span class="component-title"><a href="http://coffeescripter.com/code/ad-gallery/" target="_blank">AD Gallery</a></span>
+								<span class="component-version">v1.2.4</span>
+								<span class="component-size">28.9</span>
+								<span class="component-desc">A highly customizable gallery/showcase plugin for jQuery.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-datepicker" type="checkbox" name="plugins[]" value="Plugins/jquery-datepicker.js" />
+							<label class="clearfix" for="jquery-datepicker">
+								<span class="component-title"><a href="http://www.eyecon.ro/datepicker/" target="_blank">Date Picker</a></span>
+								<span class="component-version">v1.0</span>
+								<span class="component-size">33.0</span>
+								<span class="component-desc">A Date Picker component with a lot of options and easy to fit in your web application.</span>
+							</label>
+						</div>
+						<div class="lnModule">
+							<input id="jquery-lazyload" type="checkbox" name="plugins[]" value="Plugins/jquery-lazyload.js" />
+							<label class="clearfix" for="jquery-lazyload">
+								<span class="component-title"><a href="http://www.appelsiini.net/projects/lazyload" target="_blank">Lazy Load</a></span>
+								<span class="component-version">v1.5.0</span>
+								<span class="component-size">7.0</span>
+								<span class="component-desc">Lazy loader is a jQuery plugin written in JavaScript. It delays loading of images in (long) web pages. Images outside of viewport (visible part of web page) wont be loaded before user scrolls to them.</span>
+							</label>
+						</div>
+					</fieldset>
+				</div>
+				
+				<div class="component-group clearfix alt">
+					<div class="component-group-desc">
+						<h4>Compatibility Scripts</h4>
+						<p>Scripts or code samples that target specific browsers or systems, fix issues and simplify cross-browser integration.</p>
+					</div>
+					
+					<fieldset class="component-group-list">
+						<div class="lnModule">
+							<input id="xbroswer-modernizr" type="checkbox" name="plugins[]" value="Plugins/xbroswer-modernizr.js" />
+							<label class="clearfix" for="xbroswer-modernizr">
+								<span class="component-title"><a href="http://www.modernizr.com/" target="_blank">Modernizr</a></span>
+								<span class="component-version">v1.5</span>
+								<span class="component-size">27.0</span>
+								<span class="component-desc">Modernizr adds classes to the <code>&lt;html&gt;</code> element which allow you to target specific browser functionality in your stylesheet. You don't actually need to write any Javascript to use it.</span>
+							</label>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+			
+			<div id="downloadScript-options">
+				<h2 id="componentsInfo">Components <em class="components-selected">(0 of 30 selected)</em></h2> 
+				<fieldset>
+					<div class="field-pair">
+						<input type="checkbox" id="ui-version-1.8.4" value="1.8.4" name="ui-version" disabled="" />
+						<label for="ui-version-1.8.4" class="clearfix">
+							<span class="config-title">Minimize seleted jQuery Modules</span>
+						</label>
+					</div>
+					<div class="field-pair">
+						<input id="jquery-lib" type="checkbox" name="plugins[]" value="Plugins/jquery-lib" />
+						<label class="clearfix" for="jquery-lib">
+							<span class="config-title">Include the latest version of jQuery (v1.4.2)</span>
+						</label>
+					</div>
+					<div class="field-pair">
+						<input id="jqueryui-lib" type="checkbox" name="plugins[]" value="Plugins/jqueryui-lib" />
+						<label class="clearfix" for="jqueryui-lib">
+							<span class="config-title">Include the latest version of jQuery UI (v1.8.4)</span>
+						</label>
+					</div>
+					<div class="field-pair">
+						<input id="xbrowser-html5shiv" type="checkbox" name="plugins[]" value="Plugins/xbrowser-html5shiv" />
+						<label class="clearfix" for="jqueryui-lib">
+							<span class="config-title">Use html5shiv (allows HTML5 compatibility in IE 6-7-8)</span>
+						</label>
+					</div>
+					<div class="field-pair">
+						<input type="checkbox" id="ui-version-1.7.3" value="1.7.3" name="ui-version" disabled="" />
+						<label for="ui-version-1.7.3" class="clearfix">
+							<span class="config-title">Strip all comments (Phase II)</span>
+						</label>
+					</div>
+				</fieldset>
+				<h3 id="fileSize">File size: <span id="fileSize">0.0 KB</span> <em>(non-compressed)</em></h3>
+				<button id="download_zip" type="submit" name="download" value="custom" class="">Download</button>
+				<a id="lnkDownloadAll" href="/">or download the complete package</a>
+			</div>
+			
+			<div id="pluginsIntegration">
+				<h2>Plugins Integration</h2>
+				<ol>
+					<li>Extract the folder <strong>"Plugins"</strong> and place it directly in the project's path <strong>"static/js"</strong>;</li>
+					<li>For a full integration, copy the entire code below and put in the MasterPage;</li>
+					<li>To use some plugins only in specific pages, copy only the code concerning the modules.</li>
+				</ol>
+				
+				<p>Note that extra files bundled with the plugins (in the folders) will have to be integrated separately and will NOT appear in the Code below.</p>
+				
+				<div id="codeIntegration">
+					<pre name="code" class="jscript">
+						<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+					</pre>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script src="js/download.js"></script>
+	
+	<!--Code Syntax Highlighter-->
+	<script src="js/shCore.js"></script>
+	<script src="js/shBrushJScript.js"></script>
+	<script>
+		dp.SyntaxHighlighter.ClipboardSwf = 'flash/clipboard.swf';
+		dp.SyntaxHighlighter.HighlightAll('code');
+	</script>
+	
+	
+</body>
+</html> 

@@ -1,0 +1,116 @@
+/*jslint white: true, browser: true, onevar: true, undef: true, nomen: true, eqeqeq: true, plusplus: true, bitwise: true, regexp: true, newcap: true, immed: true */
+
+/*globals $ */
+
+var UIscriptGen = {
+	disableDownload: function () {
+		$('#download_zip')
+			.addClass('disabled')
+			.attr('disabled', true);
+	},
+
+	enableDownload: function () {
+		$('#download_zip')
+			.removeClass('disabled')
+			.attr('disabled', false);
+	},
+	
+	getTotalCount: function () {
+		return $('.lnModule input[type=checkbox]').size();
+	},
+	
+	getFilesize: function () {
+		return $('.lnModule input:checked').closest('label').find('.component-size');
+	}
+
+	updateFileInfo: function (nbItems, newSize) {
+		$('#componentsInfo').html('Components <em>(' + nbItems + ' of ' + UIscriptGen.getTotalCount() + ' selected)</em>');
+		$('#fileSize').html('File size: ' + newSize + ' KB (non-compressed)');
+	},
+	
+	updateCodeList: function () {
+		var codeList = $('.dp-highlighter ol'),
+			newListItem;
+		
+		// Clear the list except for the first item
+		$('.codeIntegration ol').find("li:gt(0)").remove();
+		
+		// Detach the list while doing the DOM manipulations and then re-append it to the document
+		codeList.detach();
+
+		$('#downloadScript-components').find('input:checked').each(function () {
+			newListItem = '<li><span>&lt;script src=<span class="string">"/static/js/Plugins/' + $(this).attr('id') + 
+								'.js"</span><span>&gt;&lt;/script&gt;</span></span></li>';
+			
+			codeList.append(newListItem);
+		});
+		
+		//codeList.append(newListItem);
+		$('.dp-highlighter').append(codeList);
+	},
+
+	addCodeReferences: function (option) {
+		/* coming soon */
+	},
+
+    formChanged: function () {
+		var elems = $('#downloadScript-components').find('input:checked').size(),
+			fileSize = 0;
+		
+		if (elems > 0) {
+			// Enable the download button and Update the code list with the selected plugins
+			UIscriptGen.enableDownload();
+			UIscriptGen.updateCodeList();
+			
+			// Get the new total size
+			UIscriptGen.getFilesize();
+		}
+		else {
+			// No checkbox selected; disable the download button
+			UIscriptGen.disableDownload();
+		}
+		
+		// Update the number of components selected and the filesize labels
+		UIscriptGen.updateFileInfo(elems, fileSize);
+    },
+	
+	init: function () {
+		// Bind the event for the Select All link and handle the 
+		$('div.selectLinks').find('.selectAll').bind('click', function () {
+			if (this.innerHTML.indexOf('Deselect') !== -1) {
+				$('#downloadScript-components').find('input[type=checkbox]').attr('checked', false);
+				this.innerHTML = "Select all components";
+			} else {
+				$('#downloadScript-components').find('input[type=checkbox]').attr('checked', true);
+				this.innerHTML = "Deselect all components";
+			}
+			
+			// Call the main function that will handle all the stuff when something has changed
+			UIscriptGen.formChanged();
+			return false;
+		});
+		
+		// Delegate the click event on the checkboxes
+		$('#downloadScript').delegate('input:checkbox', 'click', function () {
+			UIscriptGen.formChanged();
+		});
+		
+		// When clicked, the download button returns it's current state: disabled or not
+		$('#download_zip').bind('click', function () {
+			return $(this).attr('disabled') !== 'false';
+		});	
+
+		// Uncheck all the checkboxes and make sure they have a 'checked' attribute
+		$('#downloadScript-components').find('input[type=checkbox]').attr('checked', false);
+		$('#downloadScript-options').find('input[type=checkbox]').attr('checked', false);
+		
+		// Delegate the mouseOver event on the Syntax Highlighter  list to show the toolbar
+		$('.codeIntegration').delegate('.dp-highlighter', 'hover', function () {
+			$(this).find('.bar').toggle();
+		});
+		
+		UIscriptGen.formChanged();
+	}
+};
+
+UIscriptGen.init();

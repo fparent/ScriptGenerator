@@ -1,0 +1,170 @@
+﻿* {outline:medium none}
+body {font:normal 12px arial; color:#888}
+h1 {font-size:30px; font-weight:bold; color:#4892d9; margin:20px 0 10px 20px;}
+h2 {font-size:24px; color:#4892d9; margin:0 0 5px 20px;}
+h3 {font-size:18px; margin:5px 0 5px 20px;}
+h3 em {font-size:12px;}
+h4 {font-size:16px; margin:5px 0 5px 20px;}
+img {display:block; margin-top:10px}
+ol,li {list-style-type:decimal;}
+li {clear:both; margin-left:20px;}
+a {color:#3079d5; text-decoration:none; white-space:nowrap;}
+a:hover {color:#bee3fd}
+.clearfix {display:block;}
+.clearfix:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+
+#pluginsIntegration {padding:20px; background-color:#f0f9ff; border:solid 1px #bde4ff; margin:20px 0; width:980px;}
+#pluginsIntegration p {margin:5px 0}
+
+.bar { position:relative; display:none; }
+
+.dp-highlighter {
+	background:url("../images/pre_bg.gif") repeat scroll left top #fff;
+	border:1px solid #ddd;
+	display:block;
+	font-family:"Courier New",Courier,monospace;
+	margin-top:20px;
+	overflow-x:scroll !important;
+	overflow-y:auto;
+	position:relative
+	z-index:50;
+	min-height:107px;
+	color:#666;
+}
+
+.dp-highlighter .tools {
+	background-color:#F8F8F8 !important;
+	border-bottom:1px solid #E7E5DC !important;
+	border-left:1px solid #E7E5DC !important;
+	padding:8px 0 8px 8px !important;
+	position:absolute !important;
+	right:0 !important;
+	top:0 !important;
+}
+.dp-highlighter .tools a { float:left; margin-right:8px; width:16px; height:16px; }
+.dp-highlighter .tools img {border:0; margin:0;}
+
+.dp-highlighter ol { padding:17px 43px; margin:0; }
+.dp-highlighter ol li { line-height:18px; }		
+.dp-highlighter .alt { background:none !important; }
+
+/* UI Script Generator */
+#downloadScript { margin:30px 0; }
+#downloadScript .alt { background-color:#f0f9ff; }
+#downloadScript h4 { font-size:1.5em; font-weight:normal; margin: 15px 0; color:#3079D5 }
+
+#selectLinks {
+	position: absolute;
+	top:-20px; right:0;
+}
+
+#downloadScript .component-group {
+	border-top:1px dotted #666666;
+	position:relative;
+	width:980px;
+	padding:0 20px 20px 20px;
+}
+
+#downloadScript .component-group-desc {
+	float:left;
+	width:350px;
+	margin-right:40px;
+}
+
+#downloadScript .component-group-list {
+	float:left;
+	width:560px;
+}
+
+#downloadScript fieldset {
+	border:0 none;
+	outline:0 none;
+}
+
+#downloadScript div.lnModule {
+	margin:0.9em 0 1.4em;
+}
+
+#downloadScript .lnModule input {
+	float:left;
+	margin-right:6px;
+}
+
+#downloadScript label span.component-title {
+	float:left;
+	font-size:1.2em;
+	font-weight:bold;
+	margin-right:10px;
+	width:100px;
+}
+
+#downloadScript label span.component-version {
+	font-size:1.1em;
+	float:left;
+	width:100px;
+}
+
+#downloadScript label span.component-size { display:none; }
+
+#downloadScript label span.component-desc {
+	font-size:1.1em;
+	float:left;
+	width:320px;
+}
+
+#downloadScript-options {
+	border-top:1px solid #bebebe;
+	padding:20px 20px 20px;
+	position:relative;
+	width:980px;
+}
+
+#downloadScript .field-pair input {
+	float:left;
+	margin: 0 0 10px 6px;
+}
+
+#downloadScript div.field-pair .config-title { margin-left:10px; }
+#downloadScript div.field-pair .config-title { margin-left:10px; }
+
+#downloadScript h2 { margin: 5px 0 20px 0; }
+#downloadScript h3 { margin: 20px 5px; }
+
+#downloadScript h2 em, #downloadScript-options h3 em {
+	color:#666666;
+	font-size:0.8em;
+	font-style:normal;
+	font-weight:normal;
+}
+
+#download_zip {
+	-moz-border-radius:6px 6px 6px 6px;
+	background-color:#4892D9;
+	border:2px solid #BDE4FF;
+	color:#EEEEEE;
+	cursor:pointer;
+	font:bold 1.5em Helvetica, Arial;
+	margin:15px 0 0;
+	padding:0.4em 0;
+	text-align:center;
+	width:140px;
+}
+
+.disabled {
+	opacity: 0.35;
+	cursor:default !important;
+}
+
+#lnkDownloadAll {
+	display:block;
+	font-size:0.8em;
+	margin-top:10px;
+	background-color:transparent;
+	border:0;
+	color:#3079d5;
+	cursor:pointer;
+}
+
+#lnkDownloadAll:hover { color:#bee3fd; }
+
+#downloadScript-options label {color:#aaa;}
